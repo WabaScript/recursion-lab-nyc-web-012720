@@ -28,3 +28,16 @@ printString('tacotuesday');
 // 1. Given an array and an index, write a recursive function to add up the elements of an array.
 // 2. Write a recursive function to find the largest integer in an array.
 // 3. Write out a function to see if an array includes a given element.
+
+
+// 1. Write out a recursive function to reverse a string.
+function reverseString(string) {
+    if (string.length > 0){
+      let rev = string[string.length - 1];
+      substring = string.substring(0, string.length - 1);
+      return rev + reverseString(substring);
+    } else {
+      return "";
+    }
+};
+reverseString('big cow party here');
