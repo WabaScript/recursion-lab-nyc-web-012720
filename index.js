@@ -56,5 +56,20 @@ function addUpTo(arr, index) {
   }
   return addUpTo(arr, index - 1) + arr[index];
 }
+
 // 2. Write a recursive function to find the largest integer in an array.
+function maxOf(arr) {
+  let max = arr[arr.length - 1];
+  
+  if (arr.length === 1) {
+    return max;
+  }
+  if (max > arr[arr.length - 2]){
+    arr.splice(arr.length - 2, 1);
+  } else {
+    arr.splice(arr.length - 1, 1);
+  }
+  return maxOf(arr)
+}
+
 // 3. Write out a function to see if an array includes a given element.
