@@ -50,5 +50,11 @@ checkPalindrome('pooooooop')
 // Arrays are another type of recursion-happy data structure. This is because, similar to the string–substring relationship, the properties of an array can be thought of as a series of sub-arrays or, in the context of our `printString()` code above, a combination of sub-arrays and a final element.
 
 // 1. Given an array and an index, write a recursive function to add up the elements of an array.
+function addUpTo(arr, index) {
+  if (index <= 0){
+    return arr[0];
+  }
+  return addUpTo(arr, index - 1) + arr[index];
+}
 // 2. Write a recursive function to find the largest integer in an array.
 // 3. Write out a function to see if an array includes a given element.

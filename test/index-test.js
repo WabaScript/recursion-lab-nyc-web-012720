@@ -62,21 +62,21 @@ try {
     });
   });
 
-  describe('isPalindrome()', function() {
+  describe('checkPalindrome()', function() {
     it("returns 'false' when a string is not a palindrome", function() {
-      expect(isPalindrome('pizza')).toEqual(false);
+      expect(checkPalindrome('pizza')).toEqual(false);
     });
 
     it("returns 'true' when a string is a palindrome", function() {
-      expect(isPalindrome("madamimadam")).toEqual(true)
+      expect(checkPalindrome("madamimadam")).toEqual(true)
     });
 
     it("makes the proper recursive calls", function() {
-      var isPalindrome = sinon.spy(window, "isPalindrome");
+      var checkPalindrome = sinon.spy(window, "checkPalindrome");
 
-      isPalindrome("madamimadam")
+      checkPalindrome("madamimadam")
 
-      expect(isPalindrome.callCount).toEqual(6)
+      expect(checkPalindrome.callCount).toEqual(6)
     });
   });
 
