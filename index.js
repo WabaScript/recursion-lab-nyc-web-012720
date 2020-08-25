@@ -73,3 +73,16 @@ function maxOf(arr) {
 }
 
 // 3. Write out a function to see if an array includes a given element.
+function includesNumber(arr, n) {
+  if (arr.length === 1) {
+    console.log("Element not found")
+    return;
+  }
+  if (arr[arr.length -1] === n){
+    console.log("Element found")
+    return;
+  } else {
+    arr.splice(arr.length -1, 1)
+  }
+  return includesNumber(arr, n)
+}
