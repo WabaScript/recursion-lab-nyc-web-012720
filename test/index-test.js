@@ -122,7 +122,7 @@ try {
     it("makes the proper recursive calls", function() {
       var includesNumber = sinon.spy(window, "includesNumber");
 
-      includesNumber([1, 4, 5, 3], 3);
+      includesNumber([3, 4, 5, 1], 3);
 
       expect(includesNumber.callCount).toEqual(4);
     });

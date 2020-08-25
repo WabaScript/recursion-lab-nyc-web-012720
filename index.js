@@ -2,11 +2,11 @@
 // Write a recursive function to print out all of the characters in a string.
 
 function printString(n){
-    let subn;
+    let substring;
     console.log(n[0]);
     if (n.length>1){
-      subn = n.substring(1, n.length);
-      printString(subn);
+      substring = n.substring(1, n.length);
+      printString(substring);
     }else {
       return;
     }
@@ -20,6 +20,7 @@ printString('tacotuesday');
 
 // 1. Write out a recursive function to reverse a string.
 function reverseString(string) {
+    let substring;
     if (string.length > 0){
       let rev = string[string.length - 1];
       substring = string.substring(0, string.length - 1);
@@ -32,8 +33,8 @@ reverseString('big cow party here');
 
 // 2. Write out a recursive function to see if a word is a palindrome.
 function checkPalindrome(str) {
-  string = str.toLowerCase()
-  len = string.length
+  let string = str.toLowerCase()
+  let len = string.length
   if (len <= 1) {
     return true;
   }
@@ -74,15 +75,16 @@ function maxOf(arr) {
 
 // 3. Write out a function to see if an array includes a given element.
 function includesNumber(arr, n) {
-  if (arr.length === 1) {
+  if (arr.length === 1 && arr[0] != n) {
     console.log("Element not found")
-    return;
+    return false;
   }
   if (arr[arr.length -1] === n){
     console.log("Element found")
-    return;
+    return true;
   } else {
-    arr.splice(arr.length -1, 1)
+    arr.pop()
+    return includesNumber(arr, n)
   }
-  return includesNumber(arr, n)
 }
+
